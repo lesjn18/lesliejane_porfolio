@@ -21,7 +21,6 @@
     <section id="home" class="section active">
         <div class="section-content">
             <div class="home-content">
-                <!-- Try multiple possible filenames for your profile picture -->
                 <img src="formalpic.png" alt="Leslie Jane B. Nable" class="profile-image" 
                      onerror="this.onerror=null; this.src='formalpic.png';">
                 <div class="home-text">
@@ -130,7 +129,16 @@
         <div class="section-content">
             <div class="projects-content">
                 <h2>My Projects</h2>
-                <div class="projects-grid">
+                
+                <!-- Add Project Button -->
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <button class="btn btn-primary" onclick="showAddProjectForm()">
+                        ➕ Add New Project
+                    </button>
+                </div>
+
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Existing TRASHSCAN project -->
                     <div class="project-card" onclick="showProjectDetails('trashscan')">
                         <h3>🗑️ TRASHSCAN</h3>
                         <p class="project-subtitle">Smart Waste Management System</p>
@@ -191,6 +199,64 @@
             </div>
         </div>
     </section>
+
+    <!-- Add Project Modal -->
+    <div id="addProjectModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddProjectForm()">&times;</span>
+            <div class="add-project-form">
+                <h2 style="color: #00d4ff; text-align: center; margin-bottom: 30px;">➕ Add New Project</h2>
+                <form onsubmit="handleAddProject(event)" id="newProjectForm">
+                    <div class="form-group">
+                        <label>Project Icon/Emoji</label>
+                        <input type="text" id="projectIcon" placeholder="e.g., 🚀, 💡, 🎨" maxlength="2">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Project Title *</label>
+                        <input type="text" id="projectTitle" required placeholder="e.g., My Amazing App">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Project Subtitle *</label>
+                        <input type="text" id="projectSubtitle" required placeholder="e.g., Mobile Shopping Platform">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Short Description *</label>
+                        <textarea id="projectShortDesc" required placeholder="Brief description for project card..." rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Full Description *</label>
+                        <textarea id="projectFullDesc" required placeholder="Detailed project description..." rows="5"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Technologies Used</label>
+                        <input type="text" id="projectTech" placeholder="e.g., React, Node.js, MongoDB">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Project Role</label>
+                        <input type="text" id="projectRole" placeholder="e.g., Full Stack Developer">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Key Features (one per line)</label>
+                        <textarea id="projectFeatures" placeholder="Feature 1
+Feature 2
+Feature 3" rows="4"></textarea>
+                    </div>
+                    
+                    <div style="display: flex; gap: 15px; margin-top: 30px;">
+                        <button type="submit" class="submit-btn" style="flex: 1;">Add Project</button>
+                        <button type="button" class="btn" onclick="closeAddProjectForm()" style="flex: 1;">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- Project Details Modal -->
     <div id="projectModal" class="modal">
