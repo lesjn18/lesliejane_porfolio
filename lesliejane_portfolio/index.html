@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leslie Jane B. Nable - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <span class="brand">PORTFOLIO</span>
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('about')">About Me</a>
+        <a href="#" onclick="showSection('projects')">Projects</a>
+        <a href="#" onclick="showSection('music')">Music</a>
+        <a href="#" onclick="showSection('contact')">Contact</a>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <div class="section-content">
+            <div class="home-content">
+                <!-- Try multiple possible filenames for your profile picture -->
+                <img src="formalpic.png" alt="Leslie Jane B. Nable" class="profile-image" 
+                     onerror="this.onerror=null; this.src='formalpic.png';">
+                <div class="home-text">
+                    <h1>Hi, I'm Leslie Jane B. Nable!</h1>
+                    <p>Aspiring Junior Software Engineer</p>
+                    <p>📍 Minglanilla, Cebu, Philippines</p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary" onclick="showSection('about')">About Me</button>
+                        <button class="btn" onclick="showSection('projects')">View Projects</button>
+                        <button class="btn" onclick="showSection('contact')">Contact Me</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="section-content">
+            <div class="about-content">
+                <h2>About Me</h2>
+                
+                <div class="about-intro">
+                    <h3>Short Introduction</h3>
+                    <p>
+                        I am a passionate and dedicated aspiring Junior Software Engineer currently studying at 
+                        <strong>Cebu Technological University – Main Campus</strong>. I have a strong foundation in 
+                        information technology and a growing interest in web development, artificial intelligence, and 
+                        data-driven technologies.
+                    </p>
+                    <p>
+                        My journey in tech started with a simple fascination for how software can solve real-world problems 
+                        and improve people's lives. Over the years, this curiosity has grown into a commitment to continuously 
+                        learn, create, and innovate.
+                    </p>
+                    <p>
+                        I have developed skills in programming languages such as HTML, CSS, JavaScript, Python, and Java, 
+                        and have worked on projects involving responsive web applications, basic machine learning models, 
+                        and efficient algorithms. I enjoy collaborating with others, learning new technologies quickly, 
+                        and contributing to projects that create meaningful impact.
+                    </p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h3>💻 Skill Summary</h3>
+                        <ul>
+                            <li>Programming Languages: Java, PHP, JavaScript</li>
+                            <li>Tools & Technologies: XAMPP, MySQL, GitHub</li>
+                        </ul>
+                    </div>
+
+                    <div class="about-card">
+                        <h3>🎯 Career Goals</h3>
+                        <p>
+                            One of my long-term dreams is to build a platform or application centered around music education—a 
+                            website or app where people, especially children from low-income communities, can learn music for free.
+                        </p>
+                        <p>
+                            Growing up, I didn't have access to formal music lessons, and there's always been a "what if?" 
+                            in my mind—What if we had the resources? Would I have built a strong musical foundation?
+                        </p>
+                        <p>
+                            Today, I want to bridge that gap for others by combining technology and creativity to make music 
+                            learning accessible, inclusive, and empowering.
+                        </p>
+                    </div>
+
+                    <div class="about-card">
+                        <h3>✨ Soft Skills</h3>
+                        <ul>
+                            <li>Communication</li>
+                            <li>Teamwork</li>
+                            <li>Problem-Solving</li>
+                        </ul>
+                    </div>
+
+                    <div class="about-card">
+                        <h3>🏆 Achievements</h3>
+                        <ul>
+                            <li><strong>Senior High School:</strong> With Honors</li>
+                            <li><strong>College:</strong> Dean's Lister</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="education-section">
+                    <h3>🎓 Education Attainment</h3>
+                    <ul class="education-list">
+                        <li><strong>Cebu Technological University - Main Campus</strong> (2024 - Present)</li>
+                        <li><strong>Immaculate Heart of Mary Academy</strong> (2022 - 2024)</li>
+                        <li><strong>Vito National High School</strong> (2018 - 2022)</li>
+                        <li><strong>Minglanilla Central School</strong> (2012 - 2018)</li>
+                    </ul>
+                </div>
+
+                <div style="text-align:center; margin-top: 30px;">
+                    <button class="btn" onclick="showSection('home')">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="section-content">
+            <div class="projects-content">
+                <h2>My Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card" onclick="showProjectDetails('trashscan')">
+                        <h3>🗑️ TRASHSCAN</h3>
+                        <p class="project-subtitle">Smart Waste Management System</p>
+                        <p>An AI-powered waste classification platform that helps users identify and properly dispose of garbage using image recognition.</p>
+                        <button class="btn btn-small">View Details →</button>
+                    </div>
+                </div>
+
+                <div style="text-align:center; margin-top: 30px;">
+                    <button class="btn" onclick="showSection('home')">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="section">
+        <div class="section-content">
+            <div class="music-content">
+                <h2>🎵 Music Corner</h2>
+                <p>A creative space with interactive color-changing visuals</p>
+                <div class="color-box" id="colorBox"></div>
+                <div class="music-buttons">
+                    <button class="btn btn-primary" onclick="changeColor()">Change Color</button>
+                    <button class="btn" onclick="randomAnimation()">Random Animation</button>
+                    <button class="btn" onclick="resetBox()">Reset</button>
+                </div>
+                <div style="text-align:center; margin-top: 30px;">
+                    <button class="btn" onclick="showSection('home')">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="section-content">
+            <div class="contact-content">
+                <h2>Get In Touch</h2>
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" required placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" required placeholder="What's this about?">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" required placeholder="Your message here..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+                <div style="text-align:center; margin-top: 20px;">
+                    <button class="btn" onclick="showSection('home')">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProjectDetails()">&times;</span>
+            <div id="projectDetailsContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
